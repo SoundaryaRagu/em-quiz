@@ -1,0 +1,53 @@
+#submit {
+  float: center;
+}
+#skip {
+  float: center;
+}
+#prev {
+  float: left;
+}
+#next {
+  float: right;
+}
+.opt{
+  padding-left: 50px;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+#quiz{
+  text-align: center;
+}
+#answers{
+  height: 25px;
+  width: 550px;
+  border-style: solid;
+  cursor:pointer;
+}
+label{
+  padding-left: 2px;
+}
+#ans {
+  padding-left: 5px;
+}
+#footer {
+  padding-left: 650px;
+}
+h2.ui.inverted.header {
+  padding-left: 575px;
+}
+#drop {
+  float:right;
+}
+.ui.sticky {
+  width: 1440px !important;
+  height: 23px !important;
+  margin-top: 0px;
+  left: 0px;
+  visibility: hidden;
+  padding-right: 300px;
+}

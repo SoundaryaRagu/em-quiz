@@ -1,0 +1,25 @@
+<h2> Game Over!!!!</h2>
+<form class="ui form">
+  <div class="field">
+    <h4>Total Questions:</h4>
+    {{number}}
+    <h4>Your Score:</h4>
+    {{score}}
+    <h4> Number of Questions You skipped:</h4>
+    {{skip}}
+    <h4> Number of Questions Wrong:</h4>
+    {{wrong}}
+  </div>
+  <div class="ui teal animated button" tabindex="0" {{action 'playQuiz'}}>
+    <div class="visible content">Play Again</div>
+    <div class="hidden content">
+      <i class="play icon"></i>
+    </div>
+  </div>
+  <div class="ui red animated button" tabindex="0"  {{action 'exit'}}>
+    <div class="visible content">Exit</div>
+    <div class="hidden content">
+      <i class="times icon"></i>
+    </div>
+  </div>
+</form>

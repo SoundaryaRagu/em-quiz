@@ -1,0 +1,6 @@
+{
+  "name": "em-quiz",
+  "dependencies": {
+    "js-cookie": "^2.2.0"
+  }
+}

@@ -1,0 +1,26 @@
+<form class="ui form">
+  <button class="ui red basic animated button" id="drop" {{action 'signOut'}}>
+    <div class="visible content"><i class="user icon"></i>{{user}}</div>
+    <div class="hidden content">
+      <i class="sign out alternate icon"></i>Sign-out
+    </div>
+  </button><br>
+  <h1><i class="user outline icon"></i>Welcome {{user}}!!!</h1>
+  <div class="ui teal basic label"><i class="list alternate icon"></i>Here's the Quiz Instructions:</div>
+  <div class="ui middle aligned list">
+    <div class="item"><i class="check icon"></i>The quiz consists of 5 questions.</div>
+    <div class="item"><i class="check  icon"></i>Each question in the quiz is of multiple-choices.</div>
+    <div class="item"><i class="check  icon"></i>Read each question carefully, and click on the answers.</div>
+    <div class="item"><i class="check  icon"></i>Each correct or incorrect answers will result in appropriate result after you finished your quiz.</div>
+    <div class="item"><i class="check  icon"></i>Click on previous and next buttons to navigate between the questions.</div>
+    <div class="item"><i class="check  icon"></i>You may also skip the question if you are not aware of it. </div>
+    <div class="item"><i class="check  icon"></i>  The total score for the quiz is based on your responses to all questions.</div>
+    <div class="item"><i class="check  icon"></i>If you respond incorrectly to a question or retake a question again and get the correct response, your quiz score will reflect it appropriately.</div>
+  </div><br>
+  <div class="ui blue basic animated button" tabindex="0" {{action 'start'}}>
+    <div class="visible content">Start Quiz </div>
+    <div class="hidden content">
+      <i class="play icon"></i>
+    </div>
+  </div>
+</form>

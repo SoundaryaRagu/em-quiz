@@ -3,10 +3,14 @@
 # compiled output
 /dist
 /tmp
+/tests
+/vendor
+.DS_Store
 
 # dependencies
 /node_modules
 /bower_components
+.DS_Store
 
 # misc
 /.sass-cache
@@ -16,8 +20,11 @@
 npm-debug.log*
 yarn-error.log
 testem.log
+.DS_Store
 
 # ember-try
 .node_modules.ember-try/
+package-lock.json
 bower.json.ember-try
 package.json.ember-try
+.DS_Store
