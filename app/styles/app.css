@@ -1,47 +1,59 @@
 #submit {
-  float: center;
+    float: center;
 }
 #skip {
-  float: center;
+    float: center;
 }
 #prev {
-  float: left;
+    float: left;
+  visibility: hidden;
 }
 #next {
-  float: right;
+    float: right;
 }
 .opt{
-  padding-left: 50px;
+    padding-left: 50px;
 }
 h1{
-  text-align: center;
+    text-align: center;
+    font-family: 'Pacifico';
 }
 h2{
-  text-align: center;
+    text-align: center;
+    font-family: 'Pacifico';
+}
+h4{
+  font-family: 'Pacifico';
 }
 #quiz{
-  text-align: center;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
 }
 #answers{
   height: 25px;
   width: 550px;
   border-style: solid;
   cursor:pointer;
+  font-family: 'Bree Serif', serif;
 }
-label{
+legend{
   padding-left: 2px;
-}
+  font-size: 1.3em;
+  font-weight: bold;
+  }
 #ans {
-  padding-left: 5px;
+    padding-left: 5px;
+    font-family: 'Bree Serif', serif;
 }
 #footer {
-  padding-left: 650px;
+    padding-left: 650px;
 }
 h2.ui.inverted.header {
-  padding-left: 575px;
+    padding-left: 575px;
+    font-family: 'Bree Serif', serif;
 }
 #drop {
-  float:right;
+    float:right;
 }
 .ui.sticky {
   width: 1440px !important;
@@ -50,4 +62,12 @@ h2.ui.inverted.header {
   left: 0px;
   visibility: hidden;
   padding-right: 300px;
+  font-family: 'Bree Serif', serif;
+}
+#fname {
+  text-transform: capitalize;
+  font-family: 'Bree Serif', serif;
+}
+div{
+  font-family: 'Bree Serif', serif;
 }

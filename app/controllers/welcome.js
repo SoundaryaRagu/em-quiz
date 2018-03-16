@@ -1,21 +1,19 @@
 import Controller from '@ember/controller';
+import getCookie from "em-quiz/utils/cookie-get";
 
 export default Controller.extend({
-  getCookie(name) {
-    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return v ? v[2] : null;
-  },
+
   user:null,
   actions: {
     start: function() {
-      this.getCookie("name");
+    getCookie('name');
       this.transitionToRoute('/question/1');
     },
     signOut: function() {
       this.get('store').peekAll('question').forEach((question)=> {
         question.rollbackAttributes();
       });
-      this.transitionToRoute('/login');
+      this.transitionToRoute('login');
     }
   }
 });

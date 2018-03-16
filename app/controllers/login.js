@@ -1,12 +1,18 @@
 import Controller from '@ember/controller';
-import cookieGet from "em-quiz/utils/cookie-get";
+import getCookie from "em-quiz/utils/cookie-get";
+
 export default Controller.extend({
   actions: {
     displayName: function() {
-      var firstName = this.get('fname');
-      if(firstName === " ") {
-        $('.ui.sticky').css('display','visible')
-        $('.ui.sticky').transition({
+      let first = this.get('fname');
+      let firstName = first.trim();
+      if(!firstName == "") {
+        getCookie(firstName);
+        this.transitionToRoute("welcome");
+      } else {
+        let sticky = $('.ui.sticky');
+         sticky.css('display','visible')
+         sticky.transition({
           animation: 'vertical flip',
           onComplete: function() {
             setTimeout(function(){
@@ -14,11 +20,6 @@ export default Controller.extend({
             }, 2000);
           }
         });
-      } else {
-        cookieGet("currentUser",firstName);
-        // this.set(name,firstName);
-        // console.log(name);
-        this.transitionToRoute("/welcome");
       }
     },
   }

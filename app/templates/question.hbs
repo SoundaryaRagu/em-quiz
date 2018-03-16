@@ -1,22 +1,25 @@
 <div class="ui form">
 	<div id="qns">
-		<h5><i>Question: {{model.id}} </i></h5>
+		<a class="ui huge grey label">
+  	Question:
+    <div class="detail">{{model.id}}</div>
+  </a><br><br>
 		<center><h3>{{model.question}}<i class="question circle icon"></i></h3></center><br>
 	</div>
 	<div class="ui divider"></div>
-	<h5><i>Options:</i></h5>
+	<h3><i>Options:</i></h3>
 	<div id="ans" class="field">
 		{{#each model.options as |option|}}<br>
 		<label id="qn">
 			<div class="ui middle aligned list">
 				<div class="item">
-					<div id="answers" class="ui label {{if (eq option.id model.userSelection.id) 'teal'}}" {{action 'ans' option}} name={{option.id}}>{{option.option}}</div>
+					<div id="answers" class="ui large label {{if (eq option.id model.userSelection.id) 'green'}}" {{action 'ans' option}} name={{option.id}}>{{option.option}}</div>
 				</div>
 			</div>
 		</label>
 		{{/each}}
 	</div>
 	<button class="ui left labeled icon teal button" {{action "prev"}} id='prev'><i class="left arrow icon"></i>Previous</button>
-	<button class="ui left labeled icon basic button" {{action "skip"}} id="skip"><i class="shuffle icon"></i> Skip </button>
+	<button class="ui left labeled icon red button" {{action "next"}} id="skip"><i class="shuffle icon"></i> Skip </button>
 	<button class="ui right labeled icon primary button" {{action "next"}} id='next'><i class="right arrow icon"></i>Next</button>
 </div>

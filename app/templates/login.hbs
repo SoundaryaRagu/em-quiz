@@ -1,16 +1,17 @@
 <div class="ui sticky fixed top center aligned notification">
-  <div class="ui standard large message"><p align="center">Please Enter your Name</p></div>
+  <div class="ui standard large message"><p align="center">Please Enter the Player Name<i class="frown outline icon"></i>
+</p></div>
 </div>
 <div class="ui form">
   <div class="field">
-    <label><i class="user teal icon"></i>Enter Name</label>
-    <div class="ui left icon input">
+    <legend><i class="chess king teal icon"></i>Enter the Player Name</legend><br>
+    <div class="ui left icon large input">
       {{input type="text" id="fname" class="fname" name="fname" placeholder="Enter Your Name Here" value=fname}}
       <i class="id teal card icon"></i>
     </div>
 
   </div>
-  <div class="ui black animated button" tabindex="0" {{action 'displayName'}}>
+  <div class="ui teal animated button" tabindex="0" {{action 'displayName'}}>
     <div class="visible content">Let's Go!!!</div>
     <div class="hidden content">
       <i class="smile icon"></i>

@@ -1,9 +1,9 @@
 import Route from '@ember/routing/route';
 export default Route.extend({
 
-  redirect: function () {
-    this.transitionTo('login');
-  },
+  // redirect: function () {
+  //   this.transitionTo('login');
+  // },
   beforeModel() {
     this.store.push({
       data:[{

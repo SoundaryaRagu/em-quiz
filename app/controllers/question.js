@@ -1,52 +1,48 @@
 import Controller from '@ember/controller';
-import cookieGet from "em-quiz/utils/cookie-get";
+import getCookie from "em-quiz/utils/cookie-get";
 
 export default Controller.extend({
-
+  qid : Ember.computed.alias('model.id'),
   actions: {
     ans: function(option) {
-      var qid = this.get('model.id');
-      var userSelection = option.get('id');
+      let count = this.get('qid');
+      let previous = $('#prev');
+      if((this.get('qid')) >= 1) {
+        previous.css('visibility','visible');
+      } else if((this.get('qid')) ==1 ) {
+        previous.css('visibility','hidden');
+      }
+      let userSelection = option.get('id');
       this.set('model.userSelection',option);
-      if(qid>=5) {
+      if(this.get('qid')>=5) {
         this.transitionToRoute('/question/result');
       } else {
         $('#qns').transition('vertical flip in');
         $('#ans').transition('horizontal flip in');
-        this.transitionToRoute('/question/'+(++qid));
+        this.transitionToRoute('/question/'+(++count));
       }
     },
     next: function(){
-      var qid = this.get('model.id');
-      if(qid>=5) {
+      let count = this.get('qid');
+      let previous = $('#prev');
+      if(this.get('qid') >= 1) {
+        previous.css('visibility','visible');
+      } else if(this.get('qid')==1) {
+        previous.css('visibility','hidden');
+      }
+      if(this.get('qid')>=5) {
         this.transitionToRoute('/question/result');
       } else {
         $('#qns').transition('vertical flip in');
         $('#ans').transition('horizontal flip in');
-        this.transitionToRoute('/question/'+(++qid));
+        this.transitionToRoute('/question/'+(++count));
       }
     },
-
-    skip: function() {
-      var qid = this.get('model.id');
-      if(qid>=5) {
-        this.transitionToRoute('/question/result');
-      } else {
-        $('#qns').transition('vertical flip in');
-        $('#ans').transition('horizontal flip in');
-        this.transitionToRoute('/question/'+(++qid));
-      }
-    },
-
     prev:function(){
-      var qid =this.get('model.id');
-      if(qid<=1) {
-        this.transitionToRoute('/welcome');
-      } else {
-        $('#qns').transition('vertical flip in');
-        $('#ans').transition('horizontal flip in');
-        this.transitionToRoute('/question/'+(--qid));
-      }
-    },
+      let count = this.get('qid');
+      $('#qns').transition('vertical flip in');
+      $('#ans').transition('horizontal flip in');
+      this.transitionToRoute('/question/'+(--count));
+    }
   }
 });

@@ -7,5 +7,6 @@ module.exports = function(defaults) {
     // Add options here
   });
   app.import('bower_components/Semantic/dist/semantic.min.css');
+  app.import('node_modules/js-cookie/src/js.cookie.js');
   return app.toTree();
 };

@@ -45,10 +45,10 @@ export default Controller.extend({
       this.get('store').peekAll('option').forEach((option)=>{
         option.rollbackAttributes();
       });
-      this.transitionToRoute('/welcome');
+      this.transitionToRoute('welcome');
     },
     exit: function() {
-      this.transitionToRoute('/login');
+      this.transitionToRoute('login');
     }
   }
 });
