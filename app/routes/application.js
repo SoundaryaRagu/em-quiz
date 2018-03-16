@@ -1,9 +1,16 @@
 import Route from '@ember/routing/route';
-export default Route.extend({
+import CookieGet from "em-quiz/utils/cookie-get";
 
-  // redirect: function () {
-  //   this.transitionTo('login');
-  // },
+export default Route.extend({
+  redirect: function () {
+    var us = CookieGet.getCookie(name);
+    var user = us.trim();
+    if(!user == ""){
+    this.transitionTo('welcome');
+  } else {
+    this.transitionTo('login');
+  }
+  },
   beforeModel() {
     this.store.push({
       data:[{

@@ -17,6 +17,7 @@ export default Controller.extend({
       this.get('store').peekAll('question').forEach((question)=> {
         question.rollbackAttributes();
       });
+      CookieGet.deleteCookie(name);
       this.transitionToRoute('login');
     }
   }

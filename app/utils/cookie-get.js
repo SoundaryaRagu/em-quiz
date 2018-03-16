@@ -1,7 +1,5 @@
 import Ember from 'ember';
-
 export default Ember.Namespace.extend({
-
  setCookie:function(name) {
   var value = document.cookie= "value="+name;
   return value ? value[2] : null;
@@ -20,5 +18,8 @@ getCookie:function(cname) {
         }
     }
     return c;
+},
+deleteCookie: function(name) {
+    document.cookie = "value="+" ";
 }
 }).create();
