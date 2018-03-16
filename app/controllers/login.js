@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import getCookie from "em-quiz/utils/cookie-get";
+import CookieGet from "em-quiz/utils/cookie-get";
 
 export default Controller.extend({
   actions: {
@@ -7,7 +7,7 @@ export default Controller.extend({
       let first = this.get('fname');
       let firstName = first.trim();
       if(!firstName == "") {
-        getCookie(firstName);
+        CookieGet.setCookie(firstName);
         this.transitionToRoute("welcome");
       } else {
         let sticky = $('.ui.sticky');
@@ -16,7 +16,7 @@ export default Controller.extend({
           animation: 'vertical flip',
           onComplete: function() {
             setTimeout(function(){
-              $('.ui.sticky').transition('vertical flip');
+              sticky.transition('vertical flip');
             }, 2000);
           }
         });

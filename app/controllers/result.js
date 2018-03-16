@@ -5,36 +5,36 @@ export default Controller.extend({
     get:function () {
       let score = 0;
       this.get('model').forEach((question)=> {
-        let userSelection = question.get('userSelection')
+        let userSelection = question.get('userSelection');
         if(!!userSelection && question.get('correctAnswer') == userSelection){
           score++;
         }
       });
-      return score
+      return score;
     }
   }),
   skip:Ember.computed('model.@each.userSelection',{
     get:function () {
       let skip = 0;
       this.get('model').forEach((question)=> {
-        let userSelection = question.get('userSelection')
+        let userSelection = question.get('userSelection');
         if(!userSelection){
           skip++;
         }
       });
-      return skip
+      return skip;
     }
   }),
   wrong:Ember.computed('model.@each.userSelection',{
     get:function () {
       let wrong = 0;
       this.get('model').forEach((question)=> {
-        let userSelection = question.get('userSelection')
+        let userSelection = question.get('userSelection');
         if(!!userSelection && question.get('correctAnswer') != userSelection){
           wrong++;
         }
       });
-      return wrong
+      return wrong;
     }
   }),
   actions: {

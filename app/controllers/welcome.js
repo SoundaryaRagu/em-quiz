@@ -1,12 +1,16 @@
 import Controller from '@ember/controller';
-import getCookie from "em-quiz/utils/cookie-get";
+import CookieGet from "em-quiz/utils/cookie-get";
 
 export default Controller.extend({
-
-  user:null,
+  user:Ember.computed('model',{
+    get: function(){
+    var user = CookieGet.getCookie(name);
+    console.log(user);
+    return user;
+    }
+  }),
   actions: {
     start: function() {
-    getCookie('name');
       this.transitionToRoute('/question/1');
     },
     signOut: function() {
